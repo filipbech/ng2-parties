@@ -1,0 +1,17 @@
+{
+    "compilerOptions": {
+        "module": "commonjs", 
+        "outDir": "build/", 
+        "sourceMap": true, 
+        "target": "es5",
+        "emitDecoratorMetadata":true
+    }, 
+    "files": [
+        "dep/types/angular2/angular2.d.ts",
+        "App.ts",
+        "main.ts",
+        "PartyList.ts",
+        "PartyService.ts",
+        "PartyAdder.ts"
+    ]
+}

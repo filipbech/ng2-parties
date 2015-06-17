@@ -1,0 +1,27 @@
+<html>
+  <head>
+  	<title>Angular 2 Quickstart</title>
+    <base href="/">
+	<script src="dep/traceur-runtime.js"></script>
+  	<script src="dep/system.0.16.7.js"></script>
+  	<script src="dep/angular2.dev.js"></script>
+  </head>
+  <body>
+  
+    <my-app></my-app>
+    
+    <script>
+      System.config({
+        baseURL:'build'
+      });
+      System.import('main');
+    </script>
+
+
+    <style>
+    .fav {
+      color:red;
+    }
+    </style>
+  </body>
+</html>
