@@ -15,11 +15,12 @@ var PartyService_1 = require('PartyService');
 var PartyAdder = (function () {
     function PartyAdder(parties) {
         this.parties = parties.getParties();
+        this.field = 'Partinavn...';
     }
-    PartyAdder.prototype.submit = function (event, field) {
+    PartyAdder.prototype.submit = function (event) {
         event.preventDefault();
-        this.parties.push(field.value);
-        field.value = '';
+        this.parties.push(this.field);
+        this.field = '';
         return false;
     };
     PartyAdder = __decorate([
@@ -28,7 +29,7 @@ var PartyAdder = (function () {
         }),
         angular2_1.View({
             directives: [forms_1.formDirectives],
-            template: "\n\t\t<form (submit)=\"submit($event, field)\">\n\t\t\t<input type=\"text\" [ng-control]=\"field\" #field/>\n\t\t\t<button>Tilf\u00F8j parti</button>\n\t\t</form>\n\t"
+            template: "\n\t\t<form (submit)=\"submit($event)\">\n\t\t\t<input type=\"text\" [(ng-model)]=\"field\" />\n\t\t\t<button>Tilf\u00F8j parti</button>\n\t\t</form>\n\t"
         }), 
         __metadata('design:paramtypes', [PartyService_1.PartyService])
     ], PartyAdder);

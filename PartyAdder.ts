@@ -1,5 +1,5 @@
 import { Component, View } from 'angular2/angular2';
-import { Validators, formDirectives, Control } from 'angular2/forms';
+import { Validators, formDirectives } from 'angular2/forms';
 import { PartyService } from 'PartyService';
 
 @Component({
@@ -8,8 +8,8 @@ import { PartyService } from 'PartyService';
 @View({
 	directives: [formDirectives],
 	template:`
-		<form (submit)="submit($event, field)">
-			<input type="text" [ng-control]="field" #field/>
+		<form (submit)="submit($event)">
+			<input type="text" [(ng-model)]="field" />
 			<button>Tilføj parti</button>
 		</form>
 	`
@@ -19,12 +19,14 @@ export class PartyAdder {
 	parties;
 	constructor(parties: PartyService) {
 		this.parties = parties.getParties();
+
+		this.field = 'Partinavn...';
 	}
 
-	submit(event,field) {
+	submit(event) {
 		event.preventDefault();
-		this.parties.push(field.value);
-		field.value = '';
+		this.parties.push(this.field);
+		this.field = '';
 		return false;
 	}
 }
