@@ -1,9 +1,9 @@
 # ng2-parties
 Example Angular2 application from ngAarhus meetup
 
-The example shows of angular2 (alpha26). The PartyList-component shows a static list of Danish Parties from a service, and a seperate component (party-adder) lets you add to the list. 
+The example shows of angular2 (alpha27). The PartyList-component shows a static list of Danish Parties from a service, and a seperate component in a seperate route (party-adder at /add) lets you add to the list. 
 
-The adder was meant to show off the form-controls, however these no longer works in alpha26. I hope Im able to keep this repository updated with coming versions, and show of the most relevant features. 
+The adder also shows of the new `[(ng-model)]`-syntax.
 
 To play with this example load it from a server. If you change anything, remember to run the typescript compiler.
 
